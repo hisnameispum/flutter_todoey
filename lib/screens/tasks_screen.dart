@@ -24,7 +24,9 @@ class _TasksScreenState extends State<TasksScreen> {
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
         onPressed: (){
-          showModalBottomSheet(context: context, builder: (context) => AddTaskScreen());
+          showModalBottomSheet(context: context, builder: (context) => AddTaskScreen((newTaskTitle){
+            print(newTaskTitle);
+          }));
         },
       ),
       body: Column(
