@@ -3,11 +3,7 @@ import 'package:flutter_todoey/widgets/tasks_list.dart';
 import 'package:flutter_todoey/screens/add_task_screen.dart';
 import 'package:flutter_todoey/Models/task.dart';
 class TasksScreen extends StatefulWidget {
-  List<Task> tasks = [
-    Task(taskName: 'Read book'),
-    Task(taskName: 'Eat good food'),
-    Task(taskName: 'Become a millionaire'),
-  ];
+
 
   @override
   _TasksScreenState createState() => _TasksScreenState();
