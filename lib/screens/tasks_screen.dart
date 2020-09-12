@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todoey/widgets/tasks_list.dart';
 import 'package:flutter_todoey/screens/add_task_screen.dart';
-import 'package:flutter_todoey/Models/task.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_todoey/Models/task_data.dart';
 class TasksScreen extends StatefulWidget {
 
 
@@ -56,7 +57,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   height: 10,
                 ),
                 Text(
-                  '12 tasks',
+                  '${Provider.of<TaskData>(context).tasks.length} tasks',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ],
