@@ -15,7 +15,16 @@ class TasksScreen extends StatelessWidget {
         child: Icon(Icons.add),
         onPressed: (){
           showModalBottomSheet(context: context, builder: (context) => AddTaskScreen((newTaskTitle){
-            print(newTaskTitle);
+            showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                builder: (context) => SingleChildScrollView(
+                    child:Container(
+                      padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                      child: AddTaskScreen(),
+                    )
+                )
+            );
           }));
         },
       ),
@@ -63,7 +72,7 @@ class TasksScreen extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10))
               ),
-              child: TasksList(tasks: widget.tasks,),
+              child: TasksList(),
             ),
 
           )
